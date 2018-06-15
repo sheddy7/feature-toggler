@@ -1,48 +1,62 @@
 import React from 'react';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
 import Switch from '@material-ui/core/Switch';
 
-const BitstampDataViewer = (props) => {
-
+class BitstampDataViewer extends React.Component {
   state = {
-    checkedA: true,
-    checkedB: true,
+    gilad: true,
+    jason: false,
+    antoine: true,
   };
 
   handleChange = name => event => {
     this.setState({ [name]: event.target.checked });
   };
 
-  return (
-    <FormGroup row>
-      <FormControlLabel
-        control={
-          <Switch
-            checked={this.state.checkedA}
-            onChange={this.handleChange('checkedA')}
-            value="checkedA"
+  render() {
+    return (
+      <FormControl component="fieldset">
+        <FormLabel component="legend">Assign responsibility</FormLabel>
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={this.state.gilad}
+                onChange={this.handleChange('gilad')}
+                value="gilad"
+              />
+            }
+            label="Gilad Gray"
           />
-        }
-        label="Secondary"
-      />
-      <FormControlLabel
-        control={
-          <Switch
-            checked={this.state.checkedB}
-            onChange={this.handleChange('checkedB')}
-            value="checkedB"
-            color="primary"
+          <FormControlLabel
+            control={
+              <Switch
+                checked={this.state.jason}
+                onChange={this.handleChange('jason')}
+                value="jason"
+              />
+            }
+            label="Jason Killian"
           />
-        }
-        label="Primary"
-      />
-      <FormControlLabel control={<Switch value="checkedC" />} label="Uncontrolled" />
-      <FormControlLabel disabled control={<Switch value="checkedD" />} label="Disabled" />
-      <FormControlLabel disabled control={<Switch checked value="checkedE" />} label="Disabled" />
-    </FormGroup>
-  );
-
+          <FormControlLabel
+            control={
+              <Switch
+                checked={this.state.antoine}
+                onChange={this.handleChange('antoine')}
+                value="antoine"
+              />
+            }
+            label="Antoine Llorca"
+          />
+        </FormGroup>
+        <FormHelperText>Be careful</FormHelperText>
+      </FormControl>
+    );
+  }
 };
 
 export default BitstampDataViewer;

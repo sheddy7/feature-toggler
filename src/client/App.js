@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import BitstampDataContainer from './containers/BitstampDataContainer';
+import FeatureToggleContainer from './containers/FeatureToggleContainer';
 
 import reset from 'reset-css';
 import './assets/base.scss';
@@ -14,8 +14,7 @@ class App extends Component {
           <h1 className="App-title">Feature Toggler</h1>
         </header>
         <section className="App-body">
-        sdfdsf
-          <BitstampDataContainer />
+          <FeatureToggleContainer />
         </section>
       </div>
     );
