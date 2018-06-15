@@ -1,0 +1,59 @@
+$break-small: 500px;
+$break-medium: 600px;
+
+$component-gap: 20px;
+
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.App-header {
+  background-color: #122343;
+  color: #fff;
+  padding: $component-gap;
+  font-size: 24px;
+}
+
+.App-body {
+  width: 100%;
+  margin: $component-gap auto;
+  font-size: 10px;
+
+  @media screen and (min-width: $break-small) and (max-width: $break-medium - 1) {
+    font-size: 11px;
+  }
+
+  @media screen and (min-width: $break-medium) {
+    width: 600px;
+    font-size: 18px;
+  }
+}
+
+.form-control {
+  margin: $component-gap;
+}
+
+#data {
+  text-align: left;
+  margin: $component-gap 0;
+}
+
+.data-row {
+  clear: both;
+}
+
+.data-left, .data-right {
+  float: left;
+  padding: 15px 1.5%;
+  background-color: #fbfbfb;
+  border: 1px solid #f3f3f3;
+}
+
+.data-left {
+  width: 56%;
+}
+
+.data-right {
+  width: 36%;
+}
