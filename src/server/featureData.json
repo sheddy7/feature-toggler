@@ -1,5 +1,36 @@
 {
-  "feature1": true,
-  "feature2": false,
-  "feature3": true
+  "features": [
+    {
+      "id": "feature1",
+      "name": "News feed",
+      "description": "this is a description about the feature" 
+    },
+    {
+      "id": "feature2",
+      "name": "Profile",
+      "description": "this is a description about the feature" 
+    },
+    {
+      "id": "feature3",
+      "name": "Chat",
+      "description": "this is a description about the feature" 
+    }
+  ],
+  "overall": {
+    "feature1": true,
+    "feature2": false,
+    "feature3": true
+  },
+  "clients": {
+    "addidas": {
+      "feature2": true
+    },
+    "spotify": {
+      "feature3": false
+    },
+    "vodafone": {
+      "feature2": true,
+      "feature3": false
+    }
+  }
 }

@@ -18,40 +18,28 @@ class BitstampDataViewer extends React.Component {
   };
 
   render() {
+
+    const { data } = this.props;
+console.log(data);
+/*
+    const switches = data.map(item => (
+      <FormControlLabel
+        control={
+          <Switch
+            checked
+            onChange={this.handleChange('gilad')}
+            value="gilad"
+          />
+        }
+        label="Gilad Gray"
+      />
+    ));*/
+
     return (
       <FormControl component="fieldset">
         <FormLabel component="legend">Assign responsibility</FormLabel>
         <FormGroup>
-          <FormControlLabel
-            control={
-              <Switch
-                checked={this.state.gilad}
-                onChange={this.handleChange('gilad')}
-                value="gilad"
-              />
-            }
-            label="Gilad Gray"
-          />
-          <FormControlLabel
-            control={
-              <Switch
-                checked={this.state.jason}
-                onChange={this.handleChange('jason')}
-                value="jason"
-              />
-            }
-            label="Jason Killian"
-          />
-          <FormControlLabel
-            control={
-              <Switch
-                checked={this.state.antoine}
-                onChange={this.handleChange('antoine')}
-                value="antoine"
-              />
-            }
-            label="Antoine Llorca"
-          />
+          {switches}
         </FormGroup>
         <FormHelperText>Be careful</FormHelperText>
       </FormControl>
@@ -60,3 +48,15 @@ class BitstampDataViewer extends React.Component {
 };
 
 export default BitstampDataViewer;
+
+/*
+<FormControlLabel
+            control={
+              <Switch
+                checked={this.state.antoine}
+                onChange={this.handleChange('antoine')}
+                value="antoine"
+              />
+            }
+            label="Antoine Llorca"
+          />*/

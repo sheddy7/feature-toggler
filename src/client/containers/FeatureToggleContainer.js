@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BitstampDataViewer from '../components/BitstampDataViewer';
+import OverallFeatureViewer from '../components/OverallFeatureViewer';
 
 import getJsonRestClient from './../lib/getJsonRestClient';
 
@@ -9,27 +9,27 @@ class FeatureToggleContainer extends React.Component {
     super(props);
 
     this.state = { data: null };
-  };
+  }
 
   componentDidMount() {
 
     const url = '/api/features';
 
     getJsonRestClient(url)
-    .then(resp => {
+      .then(resp => {
 
-      this.setState({
-        data: resp
-      });
-    })
-    .catch(err => {
+        this.setState({
+          data: resp
+        });
+      })
+      .catch(err => {
 
-      this.setState({
-        data: null,
-        error: err
+        this.setState({
+          data: null,
+          error: err
+        });
       });
-    });
-  };
+  }
 
   render() {
 
@@ -39,13 +39,13 @@ class FeatureToggleContainer extends React.Component {
     return (
       <div>
         {!data && !error && <p>Loading</p>}
-        {data && <BitstampDataViewer
-          data={data}
+        {data && <OverallFeatureViewer
+          data={data.overall}
         />}
         {error && <p>Failed to retrieve data. Please select another ticker to retry</p>}
       </div>
     );
-  };
-};
+  }
+}
 
 export default FeatureToggleContainer;
