@@ -6,7 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Switch from '@material-ui/core/Switch';
 
-class BitstampDataViewer extends React.Component {
+class OverallFeatureViewer extends React.Component {
   state = {
     gilad: true,
     jason: false,
@@ -51,16 +51,4 @@ console.log(data);
   }
 };
 
-export default BitstampDataViewer;
-
-/*
-<FormControlLabel
-            control={
-              <Switch
-                checked={this.state.antoine}
-                onChange={this.handleChange('antoine')}
-                value="antoine"
-              />
-            }
-            label="Antoine Llorca"
-          />*/
+export default OverallFeatureViewer;
