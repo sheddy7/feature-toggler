@@ -21,23 +21,27 @@ class BitstampDataViewer extends React.Component {
 
     const { data } = this.props;
 console.log(data);
-/*
-    const switches = data.map(item => (
-      <FormControlLabel
-        control={
-          <Switch
-            checked
-            onChange={this.handleChange('gilad')}
-            value="gilad"
-          />
-        }
-        label="Gilad Gray"
-      />
-    ));*/
+
+    const switches = data.map(feature => (
+      <span>
+        <p>{feature.name}</p>
+        <FormControlLabel
+          key={feature.id}
+          control={
+            <Switch
+              checked={feature.enabled}
+              onChange={this.handleChange('gilad')}
+              value={feature.id}
+            />
+          }
+          label={feature.description}
+        />
+      </span>
+    ));
 
     return (
       <FormControl component="fieldset">
-        <FormLabel component="legend">Assign responsibility</FormLabel>
+        <FormLabel component="legend">Overall feature status</FormLabel>
         <FormGroup>
           {switches}
         </FormGroup>
